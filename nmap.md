@@ -22,7 +22,7 @@ Is because **network discovery** is a basic skill that you could test out on `yo
 Some commands may be too "noisey" and not recommended to test on `your own network`.  
 
 *But!*  
-This is *why* I want to build this type of `Docker sandbox`, By building this `sandbox` I can create a relatively safe environment to test software tools without getting in troublez...  
+This is *why* I want to build this type of `Docker sandbox`, By building this `sandbox` I can create a relatively isolated environment to test software tools...  
 
 ### Lab and Folder Layout
 
