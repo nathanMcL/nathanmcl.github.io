@@ -4,8 +4,8 @@ Starting with `Nmap`, each additional *"tool"* should have it's *own* container.
 
 ## Service Container:
 
-- `Nmap`  
--  
+- `Nmap`  to show what is running inside the container
+-  `My`, or `User` terminal (employee_terminal)
 -  
 
 ## Nmap: Live Host Discovery
