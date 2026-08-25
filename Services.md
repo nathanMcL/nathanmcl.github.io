@@ -38,13 +38,14 @@ Nmap: `https://nmap.org/`
 ## # (01/15/2026) EmployeeOne / User-Terminal
 
 (08/20/2026)*Hindsight* I should have named this section: User-Terminal, or Testing-Terminal (tt.md | TT.py | TestTerminal.c (examples))
-I mean, this container is basically a user terminal within a container built to isolate the `terminal's` signal while using web-tools.  
-my naming convention... ugh...  
+I mean, this container is basically a user terminal within a container built to isolate the `terminal's` signal while using web tools.  
+My naming convention... ugh...  
 
 - EmployeeOne  / **Testing-Terminal**  
 
 What is the purpose of this portion of the lab? Well...?...  
-A while back I read a cybersecurity-type article that told about an engineer who was working for some tech company. The engineer noticed that (If I am saying this correctly) some small, I imagine we're talking about hundredths of milliseconds, during their attempts to log into their respective company via `SSH`. So, long story short, the engineer noticed this "blip and bloop", did some things, and discovered what the actual cause was. I do not want to recreate the hack. After I initially read the article, I thought about how incredible the engineer's recognition was, and then I got curious. I'm not curious about disrupting the `SSH` connection process. So, for this `SSH Lab`'s container, it should behave as a normal terminal `SSH`ing into the `Web-https` container.  This container is represented as a known local computing device that `SSH`es into. The purpose is to isolate the user / Testing-Terminal's tool/activity signal.   
+A while back I read a cybersecurity-type article that told about an engineer who was working for some tech company. The engineer noticed that (If I am saying this correctly) some small, I imagine we're talking about hundredths of milliseconds, during their attempts to log into their respective company via `SSH`. So, long story short, the engineer noticed this "blip and bloop", did some things, and discovered what the actual cause was. I do not want to recreate the hack. After I initially read the article, I thought about how incredible the engineer's recognition was, and then I got curious. I'm not curious about disrupting the `SSH` connection process. So, for this `SSH Lab`'s container, it should behave as a normal terminal `SSH`ing into the `Web-https` container.  This container is represented as a known local computing device that `SSH`es into. The purpose is to isolate the user / Testing-Terminal's tool/activity signal. Not sure if my description about why it made me curious was accurate...   
+   
 
 
 ## Higer View - `Web-https`  
