@@ -35,9 +35,9 @@ Nmap: `https://nmap.org/`
     - Reference Guide: `https://nmap.org/book/man.html`  
 
 
-## # (01/15/2026) EmployeeOne / User-Terminal
+## (01/15/2026) EmployeeOne / User-Terminal
 
-(08/20/2026)*Hindsight* I should have named this section: User-Terminal, or Testing-Terminal (tt.md | TT.py | TestTerminal.c (examples))
+(08/20/2026) - *Hindsight* I should have named this section: User-Terminal, or Testing-Terminal (tt.md | TT.py | TestTerminal.c (examples))
 I mean, this container is basically a user terminal within a container built to isolate the `terminal's` signal while using web tools.  
 My naming convention... ugh...  
 
@@ -55,7 +55,7 @@ Receives a connection request:
         - `Web-https` logs the employee connection named: `EmployeeOne`  w/ Timestamp.  
         - `Web-https` logs that the employee disconnected (timestamped).  
 
-## `EmployeeOne`:  
+## `EmployeeOne`  
 
 The Employee:  
     - `EmployeeOne` creates the `SSH` connection...  
@@ -135,7 +135,7 @@ exec ttyd \
     /usr/local/bin/employee-terminal
 ```
 
-#### ***Noted Sources***  
+***Noted Sources***  
 
 - Microsoft Engineer Discovered Supply Chain Attack:  
     - `NPR`: `https://www.npr.org/2024/04/11/1244174104/one-engineer-may-have-saved-the-world-from-a-massive-cyber-attack`  
