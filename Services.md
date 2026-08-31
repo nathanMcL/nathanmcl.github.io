@@ -5,7 +5,7 @@ Starting with `Nmap`, each additional *"tool"* should have it's *own* container.
 ## Service Container:
 
 - `Nmap`  to show what is running inside the container
--  `My`, or `User` terminal (employee_terminal)
+-  terminal (employee_terminal)
 -  
 
 ## Nmap: Live Host Discovery
@@ -36,6 +36,7 @@ Nmap: `https://nmap.org/`
 
 
 ## (01/15/2026) EmployeeOne / User-Terminal
+
 
 (08/20/2026) - *Hindsight* I should have named this section: User-Terminal, or Testing-Terminal (tt.md | TT.py | TestTerminal.c (examples))
 I mean, this container is basically a user terminal within a container built to isolate the `terminal's` signal while using web tools.  
@@ -118,7 +119,7 @@ I have things there, but things are not rebuilding correctly.
 Rebuilt `ssh1` is still using the old malformed `ttyd` launcher.
 The startup log still showed:  
   
-```start command:  # Port for ttyd to listen on
+```start command: # Port for ttyd to listen on...
 The --writable option is not set```  
 
 - What this means, is the `-w` patch did not make it into the running container.  
@@ -132,8 +133,36 @@ exec ttyd \
     -t disableLeaveAlert=true \
     -t fontSize=12 \
     -t titleFixed="EmployeeOne - SSH Lab" \
-    /usr/local/bin/employee-terminal
-```
+    /usr/local/bin/employee-terminal```
+
+## Terminal in `C` (employee_terminal.c) (08/31/2026.1400)
+
+This is a constrained lab terminal, not a general Linux shell.
+It represents EmployeeOne interacting with simulated company
+resources with the `Terminal Widget`.  
+
+### Current behavior  
+
+- `RUN` starts a controlled automated session.  
+- `HELP` displays available commands.  
+- `Exit` closes the terminal.  
+- **Commands** are whitespace-tolerant and case-insensitive.  
+- `RUN` creates a session/correlation ID.  
+- **Employee-side** activity is logged to /timeSheet/timesheet.csv.  
+- **HTTPS** health checks originate from ssh1.  
+- `Ctrl+C` stops an active `RUN` session without closing the terminal.  
+- `SIGHUP` / `SIGTERM` cleanly stop the active session before exiting.  
+  
+Possible improvements:  
+  
+- "Company"-side logging is prepped through the optional
+EMPLOYEE_COMPANY_LOG_URL environment variable.  
+
+
+  
+***NOTE***: This is a lab simulation, not a real timesheet system.
+  
+
 
 ***Noted Sources***  
 
