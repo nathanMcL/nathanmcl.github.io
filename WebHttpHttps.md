@@ -196,6 +196,34 @@ exec ttyd \
     -t titleFixed="EmployeeOne - SSH Lab" \
     /usr/local/bin/employee-terminal```    
 
+
+## Terminal in `C` (employee_terminal.c) (08/31/2026.1400)
+
+This is a constrained lab terminal, not a general Linux shell.
+It represents EmployeeOne interacting with simulated company
+resources with the `Terminal Widget`.  
+
+### Current behavior  
+
+- `RUN` starts a controlled automated session.  
+- `HELP` displays available commands.  
+- `Exit` closes the terminal.  
+- **Commands** are whitespace-tolerant and case-insensitive.  
+- `RUN` creates a session/correlation ID.  
+- **Employee-side** activity is logged to /timeSheet/timesheet.csv.  
+- **HTTPS** health checks originate from ssh1.  
+- `Ctrl+C` stops an active `RUN` session without closing the terminal.  
+- `SIGHUP` / `SIGTERM` cleanly stop the active session before exiting.  
+  
+Possible improvements:  
+  
+- "Company" -side logging is prepped through the optional
+EMPLOYEE_COMPANY_LOG_URL environment variable.  
+
+
+  
+***NOTE***: This is a lab simulation, not a real timesheet syste
+
 ***Noted Sorces***  
 
 - Computer Networking || A Top-Down Approach 8th Edition  
