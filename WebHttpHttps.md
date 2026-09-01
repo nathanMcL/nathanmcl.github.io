@@ -222,7 +222,7 @@ EMPLOYEE_COMPANY_LOG_URL environment variable.
 
 
   
-***NOTE***: This is a lab simulation, not a real timesheet syste
+***NOTE***: This is a lab simulation, not a real timesheet system.  
 
 ***Noted Sorces***  
 
