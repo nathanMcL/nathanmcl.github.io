@@ -8,8 +8,7 @@ My naming convention... ugh...
 - EmployeeOne  / **Testing-Terminal**  
 
 What is the purpose of this portion of the lab? Well...?...  
-A while back I read a cybersecurity-type article that told about an engineer who was working for some tech company. The engineer noticed that (If I am saying this correctly) some small- I imagine we're talking about hundredths of milliseconds- during their attempts to log into their respective company via `SSH`. So, long story short, the engineer noticed this "blip and bloop", did some things, and discovered what the actual cause was. I do not want to recreate the hack. After I initially read the article, I thought about how incredible the engineer's recognition was, and then I got curious. I'm not curious about disrupting the `SSH` connection process. So, for this `SSH Lab`'s container, it should behave as a normal terminal `SSH`ing into the `Web-https` container.  This container is represented as a known local computing device that `SSH`es into. The purpose is to isolate the user / Testing-Terminal's tool/activity signal. Not sure if my description about why it made me curious was accurate...   
-   
+A while back I read a cybersecurity-type article that told about an engineer who was working for some tech company. The engineer noticed that (If I am saying this correctly) some small- I imagine we're talking about hundredths of milliseconds- during their attempts to log into their respective company via `SSH`. So, long story short, the engineer noticed this "blip and bloop", did some things, and discovered what the actual cause was. I do not want to recreate the hack. After I initially read the article, I thought about how incredible the engineer's recognition was, and then I got curious. I'm not curious about disrupting the `SSH` connection process. So, for this `SSH Lab`'s container, it should behave as a normal terminal `SSH`ing into the `Web-https` container.  This container is represented as a known local computing device that `SSH`es into. The purpose is to isolate the user / Testing-Terminal's tool/activity signal.  
 
 
 ## Higher View - `Web-https`  
@@ -30,7 +29,7 @@ The Employee:
     - `EmployeeOne` is automated to do something simple  
     - `EmployeeOne` disconnects the `SSH` connection after a set period of time...  
     Once the employee disconnects their connection...  
-        - Manually with `ctrl+c`  
+        - Manually with `Ctrl+C`  
         - Else, `EmployeeOne` completes that segment of the employee work cycle and loops the same process again after a set period of time.  
 
 `Packet Capture`: Records the network interaction...  
@@ -128,13 +127,13 @@ EMPLOYEE_COMPANY_LOG_URL environment variable.
 
 We want to prepare to rebuild...  
 
-**NOTE** Withing the Main Container.  
+**NOTE** Within the Main Container.  
   
 `docker compose build --no-cache ssh1`  
   
 Move on to the next step ***IF*** you receive the `"✔ Image Whatever_itsNamed Built"`...  
 
-- Recreate only that `ssh1` instance. (I don't like my naming convention. Next time bust open a thesaurse - maybe choose something other than what got me to that page...)  
+- Recreate only that `ssh1` instance. (I don't like my naming convention. Next time, bust open a thesaurus - maybe choose something other than what got me to that page...)  
 
 `docker compose up -d --force-recreate ssh1`  
 
@@ -145,7 +144,7 @@ now the container for `this_lab` / `lab_ssh1` has started.
 
 `docker logs lab_ssh1 --tail=80`
 
-It started, but to test I have to have atleast the:  
+It started, but to test, I have to have at least the:  
   
 - `lab_console`  
 - `lab_ssh1`  
@@ -157,7 +156,7 @@ It started, but to test I have to have atleast the:
 
 `docker compose up -d`  
 
-Should recieve `Started`  
+Should receive `Started`.  
 
 ***Next***  
 
@@ -175,13 +174,13 @@ lab_http        sandbox-web-http           "Website…"               web-http  
 lab_https       sandbox-web-https          "Website…"               web-https     11 days ago      Up                  80/tcp, 443/tcp 
 ```  
 
-**IF**! Everthing is fine, 
-check the published dashbord port:  
+**IF**! Everything is fine, 
+check the published dashboard port:  
 
 `docker ps --format "table {{.Names}}\t{{.Ports}}"`
 
 This will display the `NAMES` & `PORTS`.  
-Also, from the previous command that generated the previous table data, that tells you what the name of the ports we want to test.  
+Also, the previous command that generated the table data, that tells you the names of the ports we want to test.  
 
 ### Test Dashboard Uno!
 
@@ -203,7 +202,7 @@ Date: Thu, 03 Sep 2026 22:21:24 NMT
 
 **Next**
 
-- Test the destinations `RUN` command that is used, from inside the shell.  
+- Test the destinations `RUN` command that is used from inside the shell.  
 
 Navigate or Drill down...
 I navigated through four directories.  
