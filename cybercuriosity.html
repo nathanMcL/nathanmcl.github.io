@@ -1,97 +1,201 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="@MacN_iT website">
-        <title>MacN the Full Stack... Cyber Curiosity Page</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@MacN_iT website">
+    <title>MacN the Full Stack... Cyber Curiosity Page</title>
 
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="cybercuriosityStyles.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="cybercuriosityStyles.css">
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="images/favicon.png">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        
-        <!-- Security Headers -->
-        <meta http-equiv="Content-Security-Policy" 
-            content=
-                "default-src 'self';
-                style-src 'self'; 
-                img-src 'self' data:; 
-                font-src 'self' data:;
-                object-src 'none';
-                base-uri 'none'; 
-                require-trusted-types-for 'script';
-                script-src 'self' https://cdn.jsdelivr.net; 
-                connect-src https://raw.githubusercontent.com;
-                frame-src https://raw.githubusercontent.com https://viewer.diagrams.net https://nathanmcl.github.io;">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" 
+        content=
+            "default-src 'self';
+            style-src 'self'; 
+            img-src 'self' data:; 
+            font-src 'self' data:;
+            object-src 'none';
+            base-uri 'none'; 
+            require-trusted-types-for 'script';
+            script-src 'self' https://cdn.jsdelivr.net; 
+            connect-src https://raw.githubusercontent.com;
+            frame-src https://raw.githubusercontent.com https://viewer.diagrams.net https://nathanmcl.github.io;">
 
-        <meta http-equiv="X-Content-Type-Options" content="nosniff">
-        <meta http-equiv="Referrer-Policy" content="no-referrer">
-        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-        <meta name="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    </head>
-    <body>
-        <!-- Header Section -->
-        <header class="header-about">
-            <nav class="navigation">
-                <div class="nav_container">
-                    <!-- Logo and @MacN_iT -->
-                    <a href="index.html" id="nav_logo">
-                        <img src="/images/LittleRobotBackgroundErase.png" alt="MacN_iT Logo" class="littlerobot">
-                        <span class="color-change">@</span><span class="color-change">M</span>
-                        <span class="color-change">a</span><span class="color-change">c</span>
-                        <span class="color-change">N</span><span class="color-change">_</span>
-                        <span class="color-change">i</span><span class="color-change">T</span>
-                    </a>
-                    <ul class="nav.menu">
-                        <li class="nav_item"><a href="index.html">Home</a></li>
-                        <li class="nav_item"><a href="about.html">About</a></li>
-                        <li class="nav_item"><a href="blog.html">Thoughts</a></li>
-                        <li class="nav_item"><a href="tools.html">Tools</a></li>
-                        <li class="nav_item"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- End of Header section -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta name="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+</head>
 
-        <!-- Markdown buttons to link other readme files to this one -->
-        <div class="markdown-toggle-group">
-            <a href="blog.html" class="oval-btn btn-blog" aria-label="Go to the main Blog">Full Stack Thoughts</a>
-            <span class="oval-btn btn-cyber current-page" aria-current="page">Cyber Thoughts...</span>
-            <a href="backend.html" class="oval-btn btn-backend" aria-label="Go to Back-End Notes">Back-End</a>
-        </div>
+<body>
+    <!-- Header Section -->
+    <header class="header-about">
+        <nav class="navigation">
+            <div class="nav_container">
 
-        <!-- Main Section: Blog Page -->
-        <main>
-            <div class="main_blog">
-                <div class="blog_head">
-                    <h1 class="cyber-glow neon-white">
-                        Cyber Thoughts...
-                        <img src="/images/LittleRobotBackgroundErase.png" alt="MacN_iT Logo" class="blogrobot">
-                    </h1>
-                </div>
-                <div class="post_section">
-                    <div class="blog_post">
-                        <div class="post_image">
-                            <img src="/images/SoftwareEngineer_AFAM_Male.png" alt="ProfileImage">
-                        </div>
-                    <div>
-                        <h2>MacN the Full Stack</h2>
-                        <h5>Loading Cyber Notes and Thoughts...</h5>
-                        <div id="markdown-content" class="markdown-section"></div>
+                <!-- Logo and @MacN_iT -->
+                <a href="index.html" id="nav_logo">
+                    <img
+                        src="/images/LittleRobotBackgroundErase.png"
+                        alt="MacN_iT Logo"
+                        class="littlerobot"
+                    >
+
+                    <span class="color-change">@</span><span class="color-change">M</span>
+                    <span class="color-change">a</span><span class="color-change">c</span>
+                    <span class="color-change">N</span><span class="color-change">_</span>
+                    <span class="color-change">i</span><span class="color-change">T</span>
+                </a>
+
+                <ul class="nav_menu">
+                    <li class="nav_item">
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="blog.html">Thoughts</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="tools.html">Tools</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- End of Header section -->
+
+
+    <!-- Markdown buttons to link other readme files to this one -->
+    <div class="markdown-toggle-group">
+
+        <a
+            href="blog.html"
+            class="oval-btn btn-blog"
+            aria-label="Go to the main Blog"
+        >
+            Full Stack Thoughts
+        </a>
+
+        <span
+            class="oval-btn btn-cyber current-page"
+            aria-current="page"
+        >
+            Cyber Thoughts...
+        </span>
+
+        <a
+            href="backend.html"
+            class="oval-btn btn-backend"
+            aria-label="Go to Back-End Notes"
+        >
+            Back-End
+        </a>
+
+    </div>
+
+
+    <!-- Main Section: Blog Page -->
+    <main>
+
+        <div class="main_blog">
+
+            <div class="blog_head">
+
+                <h1 class="cyber-glow neon-white">
+                    Cyber Thoughts...
+
+                    <img
+                        src="/images/LittleRobotBackgroundErase.png"
+                        alt="MacN_iT Logo"
+                        class="blogrobot"
+                    >
+                </h1>
+
+            </div>
+
+
+            <div class="post_section">
+
+                <div class="blog_post">
+
+                    <div class="post_image">
+
+                        <img
+                            src="/images/SoftwareEngineer_AFAM_Male.png"
+                            alt="ProfileImage"
+                        >
+
                     </div>
+
+
+                    <div>
+
+                        <h2>MacN the Full Stack</h2>
+
+                        <h5>
+                            Loading Cyber Notes and Thoughts...
+                        </h5>
+
+                        <div
+                            id="markdown-content"
+                            class="markdown-section"
+                        ></div>
+
+                    </div>
+
+
                     <!-- Markdown Cyber Thoughts Sectional Buttons Cyber/Sandbox -->
                     <div class="readme-toggle-buttons">
-                        <button class="toggle-btn" id="toggle-be1" type="button" aria-pressed="true">Cyber Thoughts</button>
-                        <button class="toggle-btn" id="toggle-be2" type="button" aria-pressed="false">Sandbox Notes</button>
+
+                        <button
+                            class="toggle-btn"
+                            id="toggle-be1"
+                            type="button"
+                            aria-pressed="true"
+                        >
+                            Cyber Thoughts
+                        </button>
+
+                        <button
+                            class="toggle-btn"
+                            id="toggle-be2"
+                            type="button"
+                            aria-pressed="false"
+                        >
+                            Sandbox Notes
+                        </button>
+
                     </div>
 
-                    <!-- Sandbox Sub-Nav (hidden until Sandbox Notes is clicked) -->
-                    <div id="sandbox-subnav" class="sandbox-subnav" hidden aria-label="Sandbox Notes sections">
+
+                    <!-- Sandbox Sub-Nav
+                         Hidden until Sandbox Notes are clicked -->
+                    <div
+                        id="sandbox-subnav"
+                        class="sandbox-subnav"
+                        hidden
+                        aria-label="Sandbox Notes sections"
+                    >
+
+                        <!-- Services -->
                         <button
                             id="sandbox-services-btn"
                             class="orb-btn orb-services"
@@ -104,6 +208,8 @@
                             <span class="sr-only">Services</span>
                         </button>
 
+
+                        <!-- Network -->
                         <button
                             id="sandbox-network-btn"
                             class="orb-btn orb-network"
@@ -116,6 +222,8 @@
                             <span class="sr-only">Network</span>
                         </button>
 
+
+                        <!-- Packet Capture -->
                         <button
                             id="sandbox-pcap-btn"
                             class="orb-btn orb-pcap"
@@ -127,10 +235,21 @@
                             <span aria-hidden="true">PC</span>
                             <span class="sr-only">Packet Capture</span>
                         </button>
+
                     </div>
 
-                    <!-- Network Child Buttons (hidden until N is clicked) -->
-                    <div id="sandbox-network-children" class="sandbox-children" hidden aria-label="Network subsections">
+
+                    <!-- Network Child Buttons
+                         Hidden until Network is clicked -->
+                    <div
+                        id="sandbox-network-children"
+                        class="sandbox-children"
+                        hidden
+                        aria-label="Network subsections"
+                    >
+                        
+                        <!-- Cellular Device
+                             Loads MacATron.md -->
                         <button
                             id="sandbox-network-cd-btn"
                             class="orb-btn orb-child"
@@ -140,9 +259,15 @@
                             title="Cellular Device"
                         >
                             <span aria-hidden="true">CD</span>
-                            <span class="sr-only">Cellular Device</span>
+
+                            <span class="sr-only">
+                                Cellular Device readme section
+                            </span>
                         </button>
 
+
+                        <!-- Web HTTP / HTTPS
+                             Loads WebHttpHttps.md -->
                         <button
                             id="sandbox-network-web-btn"
                             class="orb-btn orb-child"
@@ -152,75 +277,188 @@
                             title="Web HTTP / HTTPS"
                         >
                             <span aria-hidden="true">Web</span>
-                            <span class="sr-only">Web HTTP / HTTPS</span>
+
+                            <span class="sr-only">
+                                Web HTTP / HTTPS readme section
+                            </span>
                         </button>
+
+
+                        <!-- Lab Terminals
+                             Loads LabTerminals.md
+                             JavaScript will apply the
+                             markdown-theme-terminal class
+                             to #markdown-sandbox. -->
+                        <button
+                            id="sandbox-network-lab-terminals-btn"
+                            class="orb-btn orb-child"
+                            type="button"
+                            aria-pressed="false"
+                            aria-controls="markdown-sandbox"
+                            title="Lab Terminals"
+                        >
+                            <span aria-hidden="true">LT</span>
+
+                            <span class="sr-only">
+                                Lab Terminals readme section
+                            </span>
+                        </button>
+
                     </div>
 
+
                     <!-- Markdown Containers -->
-                    <div id="markdown-be1" class="markdown-section"></div> <!-- Cyber Thoughts -->
 
-                    <!-- Single Sandbox render target -->
-                    <section id="markdown-sandbox" class="markdown-section" aria-live="polite" hidden></section>
+                    <!-- Cyber Thoughts -->
+                    <div
+                        id="markdown-be1"
+                        class="markdown-section"
+                    ></div>
+
+
+                    <!--
+                        Single Sandbox render target.
+
+                        Existing Sandbox Markdown and
+                        LabTerminals.md all render here.
+
+                        cybercuriosityScript.js will temporarily
+                        add:
+
+                            markdown-theme-terminal
+
+                        when Lab Terminals is selected.
+
+                        Selecting another Sandbox document will
+                        remove the optional theme and restore the
+                        normal inherited Sandbox palette.
+                    -->
+                    <section
+                        id="markdown-sandbox"
+                        class="markdown-section"
+                        aria-live="polite"
+                        hidden
+                    ></section>
+
                 </div>
+
             </div>
-        </main>
-        <!-- End of Main Section -->
 
-        <!-- Sandbox HTTPS Screenshot (01/14/2026) -->
-        <section
-            id="sandbox-https-screenshot"
-            class="sandbox-https-screenshot"
-            aria-labelledby="sandbox-screenshot-title"
-            hidden
-            >
-            <h2 id="sandbox-screenshot-title" class="sr-only">The HTTPS Sandbox Screenshot</h2>
+        </div>
 
-            <figure class="sandbox-https-card">
-                <img
+    </main>
+    <!-- End of Main Section -->
+
+
+    <!-- Sandbox HTTPS Screenshot
+         Existing behavior remains unchanged.
+         JavaScript controls visibility only for
+         WebHttpHttps.md. -->
+    <section
+        id="sandbox-https-screenshot"
+        class="sandbox-https-screenshot"
+        aria-labelledby="sandbox-screenshot-title"
+        hidden
+    >
+
+        <h2
+            id="sandbox-screenshot-title"
+            class="sr-only"
+        >
+            The HTTPS Sandbox Screenshot
+        </h2>
+
+
+        <figure class="sandbox-https-card">
+
+            <img
                 src="images/LabHttps_Static_Website.png"
                 alt="This is my basic HTTPS Sandbox Screenshot."
                 loading="lazy"
                 decoding="async"
-                />
-                <figcaption class="sandbox-https-screenshot-caption">
+            >
+
+            <figcaption class="sandbox-https-screenshot-caption">
                 HTTPS Sandbox - Frontend Screenshot
-                </figcaption>
-            </figure>
-        </section>
-        <!-- End of Sandbox HTTPS Screenshot (01/14/2026) -->
+            </figcaption>
 
-        <!-- Docker Sandbox Relationship Diagram -->
-        <section class="sandbox-diagram-section" aria-labelledby="sandbox-diagram-title">
-            <h2 id="sandbox-diagram-title" class="sr-only">Docker Sandbox Relationship Diagram</h2>
+        </figure>
 
-            <figure class="sandbox-diagram-card">
-                <img 
-                    src="images/DockerSandbox.drawio.png"
-                    alt="(This) Docker Sandbox relationship diagram showing container and network relationships."
-                    loading="lazy"
-                    decoding="async"
-                />
-                <figcaption class="sandbox-diagram-caption">
-                    Docker Sandbox - Relationship Diagram
-                </figcaption>
-            </figure> 
-        </section>
-        <!-- End of Docker Sandbox Relationship Diagram -->
+    </section>
 
-        <!-- Footer Section -->
-        <footer role="contentinfo">
-            <p>&copy; 2025 MacN @MacN_iT All Rights Reserved</p>
-            <nav aria-label="Footer Navigation">
-                <a href="index.html">Home</a>
-            </nav>
-        </footer>
 
-        <!-- Cyber container effect -->
-        <div class="cyber-container"></div>
+    <!-- Docker Sandbox Relationship Diagram -->
+    <section
+        class="sandbox-diagram-section"
+        aria-labelledby="sandbox-diagram-title"
+    >
+
+        <h2
+            id="sandbox-diagram-title"
+            class="sr-only"
+        >
+            Docker Sandbox Relationship Diagram
+        </h2>
+
+
+        <figure class="sandbox-diagram-card">
+
+            <img
+                src="images/DockerSandbox.drawio.png"
+                alt="(This) Docker Sandbox relationship diagram showing container and network relationships."
+                loading="lazy"
+                decoding="async"
+            >
+
+            <figcaption class="sandbox-diagram-caption">
+                Docker Sandbox - Relationship Diagram
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+
+        <p>
+            &copy; 2025 MacN @MacN_iT All Rights Reserved
+        </p>
+
+        <nav aria-label="Footer Navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </nav>
+
+    </footer>
+
+
+    <!-- Cyber container effect -->
+    <div class="cyber-container"></div>
+
 
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script> <!-- Marked.js to display Readme -->
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js" defer></script> <!-- Marked.js to display Readme -->
-    <script src="cybercuriosityScript.js" defer></script>
-    </body>
+
+    <!-- Marked.js to display Readme -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+        defer
+    ></script>
+
+    <!-- DOMPurify sanitizes Markdown-generated HTML -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"
+        defer
+    ></script>
+
+    <script
+        src="cybercuriosityScript.js"
+        defer
+    ></script>
+
+</body>
 </html>
