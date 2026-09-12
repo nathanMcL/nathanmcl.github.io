@@ -1,32 +1,42 @@
-/* Body styles */
+/* Body styles */ webBtn
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--second-color); /* Background using third color */
-    color: #333; /* General text color */
+    background-color: var(--first-color); 
+    color: var(--fourth-color); /* General text color */
     border-radius: 2.5px;
 }
 
-/* Color palette from: https://palettes.shecodes.io/palettes/507#palette */
+/* Color palette: Cyber Curiosity */
 :root {
-    --first-color: #222221;
-    --second-color: #c4eada;
-    --third-color: #ef7b7b;
-    --fourth-color: #fcf3ca;
+    --first-color: #0e0e10; /* Ebony background */
+    --second-color: #1a1a1d; /* Deep Charcoal for some sections */
+    --third-color: #08f7f3; /* Electric Cyan */
+    --fourth-color: #f5f642; /* Neon Yellow */
+
+    --neon-purple: #9a00ff; /* Neon Purple */
+    --neon-green: #39ff14; /* Neon Green */
+    --neon-pink: #ff0057; /* Neon Pink */
+
+    --lightning-purple: #f200ff; /* Sandbox Lightning Purple */
+    --dark-void: #120036; /* Sandbox Dark Void Purple*/
+    --electric-lime: #73eb0a; /* Sandbox Electric Lime */
+    --lightspeed-yellow: #f7fa1cf3; /* Sandbox Lightspeed Yellow */
+    --lightspeed-orange: #ff9f1a; /* Sandbox Lightspeed Orange */
+    --platnum-purple:  #b366ff; /* Sandbox Platnum Purple */
+    --bamboo-cream: #efece3; /* Sandbox Bamboo Cream */
+   
     /* @MacN_iT text color change */
+    --flag-red: #ff2975;
     --flag-white: #ffffff;
-    --flag-red: #ff0000;
-    --flag-blue: #0000ff;
-    /* Business card colors */
-    --business-card-color1: #f0d78c;
-    --business-card-color2: #fcfafa;
-    --business-card-color3: #64c4ed;
-    --business-card-color4: #4f81c7;
+    --flag-blue: #00ffff;
 }
+
 /* End of Body styles */
 /* Header styles */
 .header-about {
-    background-color: var(--third-color);
+    background-color: var(--second-color);
+    border-bottom: 2px solid var(--third-color);
     color: white;
     padding: 10px 0;
     border-radius: 10px;
@@ -82,9 +92,10 @@ body {
 }
 
 .nav_item a:hover {
-    background-color: var(--second-color); /* Remove background block */
-    color: var(--first-color); /* Change text color instead */
+    background-color: var(--neon-purple);
+    color: black; /* Change text color instead */
     text-decoration: underline; /* Optional: Underline effect */
+    text-shadow: 0 0 5px var(--neon-green);
 }
 
 /* Animation styles for color change */
@@ -132,144 +143,683 @@ body {
         color: var(--flag-blue);
     }
 }
+
+/* Neon Glowing Text Animation */
+@keyframes glowText {
+    0% { text-shadow: 0 0 5px var(--neon-green); }
+    50% { text-shadow: 0 0 20px var(--neon-purple); }
+    100% { text-shadow: 0 0 5px var(--neon-green); }
+}
+
+.cyber-glow {
+    animation: glowText 2s infinite alternate;
+}
+
+/* Neon White Glow */
+@keyframes neonWhiteGlow {
+  0% {
+    text-shadow:
+      0 0 5px var(--flag-white),
+      0 0 10px var(--flag-white),
+      0 0 15px var(--flag-white),
+      0 0 20px #e0e0ff,  /* soft blue-tint outer glow */
+      0 0 30px #cfcfff, 
+      0 0 40px #bfbfff; 
+  }
+  100% {
+    text-shadow:
+      0 0 10px var(--flag-white),
+      0 0 15px var(--flag-white),
+      0 0 20px var(--flag-white),
+      0 0 30px #f0f0ff,
+      0 0 40px #d0d0ff,
+      0 0 50px #ffffff;
+  }
+}
+
+/* Neon White Glow */
+.neon-white {
+  color: var(--flag-white);
+  animation: neonWhiteGlow 1.5s infinite alternate;
+}
+/* End of Neon White Glow */
 /* End of Animation styles for color change */
 /* End of Header styles */
 
-/* Main section styles */
-main {
-    padding: 40px 20px;
-    /*background-color: var(--second-color);*/
-}
-
-main h2 {
-    color: var(--fourth-color);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-main p {
-    color: #aba8a8;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Profile Section */
-.profile-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.profile-card {
+/* Main styles */
+/* Blog post container */
+.main_blog {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: var(--business-card-color1);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+}
+
+.blog_head h1 {
     text-align: center;
-    max-width: 300px;
-    margin: 0 auto;
+    font-size: 2rem;
+    color: var(--third-color);
+    background-color: var(--second-color);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-purple);
 }
 
-.profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+/* Resize and position the blogrobot images */
+.blogrobot {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 5px; /* Space around the images */
+    vertical-align: middle; /* Align with text */
+}
+.blog_post {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+}
+
+.blog_post h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-left: 70px;
+    padding-top: 50px; /* Space for the image */
+}
+
+.post_section {
+    margin-bottom: 40px;
+}
+
+.post_image {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.post_image img {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.profile-blurb p {
+/* Raised floating effect */
+p, h5 {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* YouTube video */
+.youtube_video {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Third Blog Post Markdown styling */
+.markdown-section {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
     color: #333;
-    line-height: 1.4;
 }
 
-/* Popout Container styles */
-.popout {
-    position: fixed;
-    top: 0;
-    left: 0;
+.markdown-section h3, .markdown-section h4 {
+    font-family: Arial, sans-serif;
+    margin-top: 0;
+}
+
+.markdown-section pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.markdown-section code {
+    background-color: #e0e0e0;
+    color: #c7254e;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.markdown-section blockquote {
+    margin: 0;
+    padding-left: 10px;
+    border-left: 4px solid #ccc;
+    color: #666;
+    font-style: italic;
+}
+
+/* Buttons for Consolidating Cyber Curiosity Readme, BackEnd_Readme */
+.markdown-toggle-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.oval-btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn-blog {
+  background-color: #ef7b7b; /* Salmon */
+  color: black;
+  box-shadow: 0 0 10px #ef7b7b, 0 0 20px #ef7b7b;
+}
+
+.btn-cyber {
+  background-color: #08f7f3; /* Electric Cyan */
+  color: black;
+  box-shadow: 0 0 10px #08f7f3, 0 0 20px #08f7f3;
+}
+
+.btn-backend {
+  background-color: #fbb03b; /* Amber Honey */
+  color: black;
+  box-shadow: 0 0 10px #fbb03b, 0 0 20px #fbb03b;
+}
+
+.oval-btn:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 5px #fff;
+}
+
+.current-page {
+  border: 2px solid white;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px white;
+  }
+  50% {
+    box-shadow: 0 0 20px white, 0 0 30px white;
+  }
+  100% {
+    box-shadow: 0 0 10px white;
+  }
+}
+
+/* End of Buttons for Consolidating Cyber Curiosity Readme, BackEnd_Readme */
+/* End of Blog Post Markdown styling */
+
+/* Wire Diagram iframe styling */
+.diagram-iframe {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 700px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+/* End of Wire Diagram iframe styling */
+
+/* Back-End additional readme sectional styles for: Cyber/Sandbox*/
+.readme-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+   margin: 20px 0;
+}
+
+.toggle-btn {
+    background-color: var(--dark-void);
+    color: var(--lightspeed-yellow);
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--lightning-purple);
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: var(--electric-lime);
+    color: var(--dark-void);
+    border: 2px solid var(--lightspeed-yellow);
+    text-shadow: 0 0 5px white;
+}
+
+/* 508/WCAG: visible keyboard focus */
+.toggle-btn:focus-visible {
+    outline: 3px solid var(--electric-lime);
+    outline-offset: 3px;
+}
+
+/* Active button glow (works regardless of mode) */
+.toggle-btn.is-active,
+.toggle-btn[aria-pressed="true"] {
+    border: 2px solid rgba(247, 250, 28, 0.70);
+    box-shadow:
+        0 0 0 2px rgba(247, 250, 28, 0.18),
+        0 0 16px rgba(247, 250, 28, 0.30);
+}
+
+/* When sandbox-mode is ON, active should feel "Sandbox" */
+body.sandbox-mode .toggle-btn.is-active,
+body.sandbox-mode .toggle-btn[aria-pressed="true"] {
+    border: 2px solid var(--lightning-purple);
+    box-shadow:
+        0 0 0 2px rgba(242, 0, 255, 0.24),
+        0 0 18px rgba(242, 0, 255, 0.38),
+        0 0 28px rgba(115, 235, 10, 0.14);
+}
+
+/* When sandbox-mode is ON, inactive should have a subtle glow */
+body.sandbox-mode .toggle-btn:not(.is-active):not([aria-pressed="true"]) {
+    box-shadow: 0 0 6px rgba(242, 0, 255, 0.18);
+    opacity: 0.92;
+}
+
+body.sandbox-mode #markdown-be2.markdown-section {
+    background-color: var(--bamboo-cream);
+    color: var(--dark-void);
+    border-left: 5px solid var(--lightning-purple);
+    box-shadow: 0 0 18px rgba(242, 0, 255, 0.18);
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+/* Adjust the color of the links */
+body.sandbox-mode #markdown-be2.markdown-section a:focus,
+body.sandbox-mode #markdown-be2.markdown-section a:hover {
+    outline: 2px solid var(--electric-lime);
+    outline-offset: 2px;
+}
+/* End of Back-End additional readme sectional styles */
+
+/* Sandbox Diagram Pop-out */
+.sandbox-diagram-section {
+    max-width: 1200px;
+    margin: 35px auto 25px auto;
+    padding: 0 20px;
+}
+
+.sandbox-diagram-card {
+    margin: 0;
+    padding: 18px;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        180deg,
+        var(--dark-void) 0%,
+        rgba(18, 0, 54, 0.75) 100%
+    );
+
+    border: 2px solid var(--lightning-purple);
+    box-shadow: 
+    0 0 0 2px rgba(242, 0, 255, 0.24),
+    0 0 18px rgba(242, 0, 255, 0.36),
+    0 0 28px rgba(115, 235, 10, 0.14);
+}
+
+.sandbox-diagram-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+
+    border: 2px solid rgba(247, 250, 28, 0.36);
+    box-shadow: 0 0 16px rgba(247, 250, 28, 0.18);
+}
+
+.sandbox-diagram-caption {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+
+    background: rgba(239, 236, 227, 0.08);
+    color: var(--bamboo-cream);
+    border: 1px solid rgba(239, 236, 227, 0.18);
+
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Keyboard focus visibility (508) */
+.sandbox-diagram-card:focus-within {
+    outline: 3px solid var(--electric-lime);
+    outline-offset: 4px;
+}
+
+/* End of Sandbox Diagram Pop-out */
+
+/* Sandbox sub-nav (mini-buttons) */
+/* Services | Network Devices | Packet Capture */
+.sandbox-subnav {
+    display: flex;
+    justify-content: center;
+    margin: 14px 0 6px 0;
+}
+
+.sandbox-subnav-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
-.popout-content {
-    background-color: var(--business-card-color4);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    width: 100%;
-    color: var(--business-card-color2);
-    position: relative;
-}
-
-.hidden {
-    display: none;
-}
-/* End of Popout Container styles */
-
-/* Business Card Section */
-.business-card-section {
-    display: flex;
+/* The following are the nested rows under the "N" button */
+.sandbox-subnav-row--nested {
+    margin-top: 10px;
     justify-content: center;
-    margin-top: 40px;
 }
 
-.business-card {
-    background-color: var(--business-card-color2);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Stack the wrapper so nested rows center under the "N" button */
+.network-stack {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The mini buttons should be round */
+.mini-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: 2px solid rgba(115, 235, 10, 0.34); /* Electric Lime border */
+    background: var(--dark-void); /* Void background */
+    cursor: pointer;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    
+    /* Pulsating electric lime glow */
+    box-shadow: 
+        0 0 0 2px rgba(115, 235, 10, 0.14),
+        0 0 14px rgba(115, 235, 10, 0.24),
+        0 0 24px rgba(115, 235, 10, 0.18);
+    animation: miniPulse 1.8s ease-in-out infinite;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* Each Button should have a different corresponding color */
+.mini-services { color: var(--lightspeed-yellow); } /* S = lightspeed yellow */
+.mini-network { color: var(--lightspeed-orange); } /* N = lightspeed orange */
+.mini-pcap { color: var(--platnum-purple); } /* PC = Platnum Purple */
+.mini-network-sub { color:  var(--electric-lime); } /* Child buttons electric lime */
+
+/* Hover lift */
+.mini-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 0 0 2px rgba(115, 235, 10, 0.18),
+        0 0 18px rgba(115, 235, 10, 0.30),
+        0 0 34px rgba(115, 235, 10, 0.20);
+}
+
+/* 508/WCAG focus visibility */
+.mini-btn:focus-visible {
+    outline: 3px solid var(--electric-lime);
+    outline-offset: 4px;
+}
+
+/* Selected State */
+.mini-btn[aria-pressed="true"],
+.mini-btn.is-active {
+    border-color: rgba(242, 0, 255, 0.76); /* Lightning Purple border when selected*/
+    box-shadow: 
+        0 0 0 2px rgba(242, 0, 255, 0.22),
+        0 0 18px rgba(242, 0, 255, 0.38),
+        0 0 32px rgba(115, 235, 10, 0.16);
+}
+
+/* Pulse Animation */
+@keyframes miniPulse {
+    0% {
+        box-shadow: 
+            0 0 0 2px rgba(115, 235, 10, 0.12),
+            0 0 10px rgba(115, 235, 10, 0.20),
+            0 0 22px rgba(115, 235, 10, 0.14);
+    }
+    50% {
+        box-shadow:
+            0 0 0 2px rgba(115, 235, 10, 0.18),
+            0 0 20px rgba(115, 235, 10, 0.34),
+            0 0 38px rgba(115, 235, 10, 0.22);
+    }
+    100% {
+        box-shadow: 
+            0 0 0 2px rgba(115, 235, 10, 0.12),
+            0 0 12px rgba(115, 235, 10, 0.20),
+            0 0 22px rgba(115, 235, 10, 0.14);
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .mini-btn {
+        animation:none;
+        transition: none;
+    }
+}
+
+/* Safety: ensure hidden always hides */
+[hidden] {
+  display: none !important;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Container that sits below Cyber Thoughts + Sandbox Notes */
+.sandbox-subnav,
+.sandbox-children {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Keep children centered under N */
+.sandbox-children {
+  margin-top: 0.5rem;
+}
+
+/* Orb base */
+.orb-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: var(--void, #07080c);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  /* accessible focus */
+  outline: none;
+}
+
+.orb-btn:focus-visible {
+  outline: 2px solid rgba(153, 255, 0, 0.85);
+  outline-offset: 3px;
+}
+
+/* Electric-lime pulse “radiating” */
+.orb-btn {
+  box-shadow:
+    0 0 0 0 rgba(153, 255, 0, 0.35),
+    0 0 18px rgba(153, 255, 0, 0.25);
+  animation: orbPulse 1.8s infinite;
+}
+
+@keyframes orbPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(153, 255, 0, 0.35),
+      0 0 18px rgba(153, 255, 0, 0.25);
+  }
+  70% {
+    box-shadow:
+      0 0 0 12px rgba(153, 255, 0, 0),
+      0 0 26px rgba(153, 255, 0, 0.22);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(153, 255, 0, 0),
+      0 0 18px rgba(153, 255, 0, 0.20);
+  }
+}
+
+/* Color coding */
+.orb-services { color: var(--lightspeed-yellow, #ffe85a); }
+.orb-network  { color: var(--lightspeed-orange, #ff9b2f); }
+.orb-pcap     { color: var(--platnum-purple, #b366ff); } 
+
+/* Child buttons inherit Sandbox */
+.orb-child {
+  width: 44px;
+  height: 44px;
+  color: var(--electric-lime, #96fbe4);
+  font-size: 0.85rem;
+}
+/* End of Sandbox sub-nav (mini-buttons) */
+
+/* Sandbox HTTPS Screenshot (01/14/2026) section.
+   This section is copied from the Docker Sandbox Relationship Diagram
+   CSS instructions, and modified for the HTTPS Screenshot image. 
+*/
+
+.sandbox-https-screenshot {
+    max-width: 1200px;
+    margin: 40px auto 28px auto; /* sits above diagram with breathing room */
+    padding: 0 20px;
+}
+
+/* Card mirrors diagram card styling */
+.sandbox-https-card {
+    margin: 0 auto;
     padding: 20px;
-    color: var(--business-card-color2);
-    max-width: 300px;
-    position: relative;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        180deg,
+        var(--dark-void) 0%,
+        rgba(18, 0, 54, 0.75) 100%
+    );
+
+    border: 2px solid var(--lightning-purple);
+    box-shadow:
+        0 0 0 2px rgba(242, 0, 255, 0.22),
+        0 0 18px rgba(242, 0, 255, 0.34),
+        0 0 32px rgba(115, 235, 10, 0.14);
+}
+
+/* SHRINK + CENTER the screenshot image */
+.sandbox-https-card img {
+    display: block;
+    width: 100%;
+    max-width: 760px;          /* limits image size */
+    height: auto;
+    margin: 0 auto;            /* center horizontally */
+
+    border-radius: 12px;
+    border: 2px solid rgba(247, 250, 28, 0.35); /* subtle HTTPS yellow */
+    box-shadow: 0 0 16px rgba(247, 250, 28, 0.18);
+}
+
+/* Caption mirrors diagram caption */
+.sandbox-https-screenshot-caption {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    background: rgba(239, 236, 227, 0.08);
+    color: var(--bamboo-cream);
+    border: 1px solid rgba(239, 236, 227, 0.18);
+
+    font-weight: 700;
+    letter-spacing: 0.3px;
     text-align: center;
 }
 
-.business-profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+/* (01/14/2026) Learned about "pinned" behavior.
+   Using this pinned behavior for the HTTPS screenshot 
+*/
+#sandbox-https-screenshot.is-pinned {
+    position: sticky;
+    top: 110px; /* Adjust based on header height */
+    z-index: 10;
 }
 
-.business-info h3 {
-    color: var(--business-card-color1);
-    margin-bottom: 10px;
+#sandbox-https-screenshot.is-pinned .sandbox-https-card {
+    box-shadow: 
+    0 0 0 2px rgba(242, 0, 255, 0.18),
+    0 0 16px rgba(242, 0, 255, 0.30),
+    0 0 28px rgba(115, 235, 10, 0.12);
 }
 
-.business-info p {
-    margin: 5px 0;
+/* But! "Sticky" might function weird with smaller screens 
+- smushing? - disable pinning */
+@media (max-width: 768px) {
+    #sandbox-https-screenshot.is-pinned {
+        position: static;
+        top: auto;
+    }
 }
 
-.business-info a {
-    color: var(--fourth-color);
-    text-decoration: none;
+/* Keyboard focus support (508 / WCAG) */
+.sandbox-https-card:focus-within {
+    outline: 3px solid var(--electric-lime);
+    outline-offset: 4px;
 }
 
-.business-info a:hover {
-    text-decoration: underline;
+/* Responsive smaller screens */
+@media (max-width: 768px) {
+    .sandbox-https-card img {
+        max-width: 100%;
+    }
 }
-
-/* Close Button */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: var(--fourth-color);
-    color: var(--third-color);
-    padding: 5px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 4.4rem;
-}
-/* End Main section styles */
+/* End of Sandbox HTTPS Screenshot (01/14/2026) section.
+   This section is copied from the Docker Sandbox Relationship Diagram
+   CSS instructions, and modified for the HTTPS Screenshot image. 
+*/
 
 
 /* Footer styling */
@@ -282,46 +832,601 @@ footer {
     border-radius: 10px;
 }
 
-/* Cyber-Grid Background */
-@keyframes cyberGrid {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%;}
-}
+/* =========================================================
+   Lab Terminals Markdown Theme
+   Dark phosphor / CRT terminal appearance
 
-.cyber-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(45deg, var(--first-color) 25%, var(--third-color) 50%, var(--fourth-color) 75%);
-    background-size: 400% 400%;
-    opacity: 0.15; /* Adjust the opacity as needed */
-    z-index: -1;
-    animation: cyberGrid 10s infinite linear;
+   Applied by cybercuriosityScript.js only when:
+   Network -> Lab Terminals is selected.
+
+   Removing .markdown-theme-terminal restores the normal
+   inherited Sandbox palette.
+   ========================================================= */
+
+.markdown-theme-terminal {
+    /* Lab Terminals palette */
+    --terminal-black: #030806;
+    --terminal-deep-green: #07140d;
+    --terminal-panel: #0a1b11;
+
+    --terminal-green: #65ff8f;
+    --terminal-bright-green: #9dffb6;
+    --terminal-muted-green: #75b98a;
+    --terminal-dim-green: #467456;
+
+    --terminal-border: rgba(101, 255, 143, 0.42);
+    --terminal-border-soft: rgba(101, 255, 143, 0.20);
+
+    --terminal-glow: rgba(101, 255, 143, 0.28);
+    --terminal-glow-soft: rgba(101, 255, 143, 0.12);
+
+    position: relative;
+    isolation: isolate;
     overflow: hidden;
-    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--terminal-black) 0%,
+            var(--terminal-deep-green) 100%
+        );
+
+    color: var(--terminal-green);
+
+    border: 1px solid var(--terminal-border);
+    border-left: 5px solid var(--terminal-green);
+    border-radius: 8px;
+
+    padding: 1.25rem;
+
+    box-shadow:
+        inset 0 0 24px rgba(0, 0, 0, 0.65),
+        0 0 10px var(--terminal-glow),
+        0 0 24px var(--terminal-glow-soft);
+
+    font-family:
+        "Courier New",
+        Consolas,
+        Monaco,
+        monospace;
+
+    line-height: 1.65;
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.38);
+
+    animation:
+        terminal-flicker 8s infinite;
 }
 
 
-/* Network Packet Animation */
-.network-packet {
+/* =========================================================
+   CRT Scan Lines
+
+   Decorative only:
+   pointer-events prevents the overlay from blocking links,
+   text selection, keyboard interaction, or copy/paste.
+   ========================================================= */
+
+.markdown-theme-terminal::before {
+    content: "";
     position: absolute;
-    top: -20px;
-    color: rgba(0, 255, 170, 1); /* Cyber green */
-    font-family: "Courier New", monospace;
-    font-size: 14x;
-    opacity: 1;
+    inset: 0;
+    z-index: 2;
+
     pointer-events: none;
-    animation: floatPackets 10s linear infinite;
-    text-shadow: 0 0 5px rgba(0, 255, 170, 0.9), 0 0 10px rgba(0, 255, 170, 0.7);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.018) 0,
+            rgba(255, 255, 255, 0.018) 1px,
+            rgba(0, 0, 0, 0.055) 2px,
+            rgba(0, 0, 0, 0.055) 4px
+        );
+
+    opacity: 0.65;
 }
 
-@keyframes floatPacket {
-    0% { transform: translateY(0px); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+
+/* =========================================================
+   Subtle Phosphor Screen Glow
+
+   Adds a restrained illuminated center without affecting
+   interaction.
+   ========================================================= */
+
+.markdown-theme-terminal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(101, 255, 143, 0.045) 0%,
+            rgba(101, 255, 143, 0.015) 48%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
 }
-/* End Network Packet Animation */
+
+
+/* =========================================================
+   Markdown Content Layer
+
+   Keeps actual Markdown content above the CRT glow while
+   allowing the transparent scan-line layer to remain visible.
+   ========================================================= */
+
+.markdown-theme-terminal > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+.markdown-theme-terminal h1,
+.markdown-theme-terminal h2,
+.markdown-theme-terminal h3,
+.markdown-theme-terminal h4,
+.markdown-theme-terminal h5,
+.markdown-theme-terminal h6 {
+    color: var(--terminal-bright-green);
+
+    font-family:
+        "Courier New",
+        Consolas,
+        Monaco,
+        monospace;
+
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 0 4px rgba(157, 255, 182, 0.70),
+        0 0 10px rgba(101, 255, 143, 0.32);
+}
+
+
+.markdown-theme-terminal h1 {
+    border-bottom: 1px solid var(--terminal-border);
+    padding-bottom: 0.45rem;
+}
+
+
+.markdown-theme-terminal h2 {
+    border-bottom: 1px solid var(--terminal-border-soft);
+    padding-bottom: 0.35rem;
+}
+
+
+/* =========================================================
+   Standard Text
+   ========================================================= */
+
+.markdown-theme-terminal p,
+.markdown-theme-terminal li,
+.markdown-theme-terminal dd,
+.markdown-theme-terminal dt {
+    color: var(--terminal-green);
+}
+
+
+.markdown-theme-terminal strong,
+.markdown-theme-terminal b {
+    color: var(--terminal-bright-green);
+
+    text-shadow:
+        0 0 5px rgba(157, 255, 182, 0.45);
+}
+
+
+.markdown-theme-terminal em,
+.markdown-theme-terminal i {
+    color: var(--terminal-muted-green);
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+.markdown-theme-terminal a {
+    color: var(--terminal-bright-green);
+
+    text-decoration-color: var(--terminal-muted-green);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+
+    transition:
+        color 160ms ease,
+        text-shadow 160ms ease;
+}
+
+
+.markdown-theme-terminal a:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px var(--terminal-green),
+        0 0 10px rgba(101, 255, 143, 0.70);
+}
+
+
+.markdown-theme-terminal a:focus-visible {
+    outline: 3px solid var(--terminal-bright-green);
+    outline-offset: 3px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 6px var(--terminal-green);
+}
+
+
+/* =========================================================
+   Horizontal Rules
+   ========================================================= */
+
+.markdown-theme-terminal hr {
+    height: 1px;
+    border: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--terminal-green),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px var(--terminal-glow);
+
+    margin: 1.5rem 0;
+}
+
+
+/* =========================================================
+   Terminal / Code Blocks
+   ========================================================= */
+
+.markdown-theme-terminal pre {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #010403 0%,
+            #020805 100%
+        );
+
+    color: var(--terminal-bright-green);
+
+    border: 1px solid var(--terminal-border);
+    border-left: 4px solid var(--terminal-green);
+
+    border-radius: 6px;
+
+    padding: 1rem;
+
+    overflow-x: auto;
+
+    box-shadow:
+        inset 0 0 16px rgba(0, 0, 0, 0.90),
+        0 0 8px var(--terminal-glow-soft);
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.35);
+
+    scrollbar-color:
+        var(--terminal-dim-green)
+        var(--terminal-black);
+}
+
+
+.markdown-theme-terminal pre::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.markdown-theme-terminal pre::-webkit-scrollbar-track {
+    background: var(--terminal-black);
+}
+
+.markdown-theme-terminal pre::-webkit-scrollbar-thumb {
+    background: var(--terminal-dim-green);
+    border: 2px solid var(--terminal-black);
+    border-radius: 6px;
+}
+
+
+.markdown-theme-terminal pre code {
+    display: block;
+
+    background: transparent;
+    border: 0;
+    padding: 0;
+
+    color: inherit;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        Monaco,
+        monospace;
+
+    white-space: pre;
+}
+
+
+/* Inline code */
+.markdown-theme-terminal :not(pre) > code {
+    background:
+        rgba(101, 255, 143, 0.09);
+
+    color: var(--terminal-bright-green);
+
+    border:
+        1px solid rgba(101, 255, 143, 0.20);
+
+    border-radius: 4px;
+
+    padding:
+        0.12em
+        0.35em;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        Monaco,
+        monospace;
+
+    text-shadow:
+        0 0 3px rgba(101, 255, 143, 0.28);
+}
+
+
+/* =========================================================
+   Blockquotes
+   ========================================================= */
+
+.markdown-theme-terminal blockquote {
+    margin:
+        1rem
+        0;
+
+    padding:
+        0.75rem
+        1rem;
+
+    color: var(--terminal-muted-green);
+
+    background:
+        rgba(101, 255, 143, 0.05);
+
+    border-left:
+        4px solid
+        var(--terminal-dim-green);
+
+    box-shadow:
+        inset 8px 0 16px rgba(101, 255, 143, 0.025);
+}
+
+
+.markdown-theme-terminal blockquote p {
+    color: inherit;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+.markdown-theme-terminal table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin:
+        1rem
+        0;
+
+    background:
+        rgba(0, 0, 0, 0.28);
+
+    color: var(--terminal-green);
+}
+
+
+.markdown-theme-terminal th,
+.markdown-theme-terminal td {
+    border:
+        1px solid
+        var(--terminal-border);
+
+    padding:
+        0.65rem;
+
+    text-align: left;
+}
+
+
+.markdown-theme-terminal th {
+    background:
+        rgba(101, 255, 143, 0.10);
+
+    color:
+        var(--terminal-bright-green);
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.30);
+}
+
+
+.markdown-theme-terminal tbody tr:hover {
+    background:
+        rgba(101, 255, 143, 0.045);
+}
+
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+.markdown-theme-terminal ul,
+.markdown-theme-terminal ol {
+    padding-left: 1.75rem;
+}
+
+
+.markdown-theme-terminal li::marker {
+    color: var(--terminal-bright-green);
+}
+
+
+/* =========================================================
+   Images Rendered From Markdown
+   ========================================================= */
+
+.markdown-theme-terminal img {
+    max-width: 100%;
+    height: auto;
+
+    border:
+        1px solid
+        var(--terminal-border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 10px var(--terminal-glow-soft);
+}
+
+
+/* =========================================================
+   Keyboard / Command Indicators
+   ========================================================= */
+
+.markdown-theme-terminal kbd {
+    display: inline-block;
+
+    padding:
+        0.15rem
+        0.4rem;
+
+    background:
+        var(--terminal-black);
+
+    color:
+        var(--terminal-bright-green);
+
+    border:
+        1px solid
+        var(--terminal-border);
+
+    border-bottom-width: 2px;
+
+    border-radius: 4px;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    box-shadow:
+        0 0 5px var(--terminal-glow-soft);
+}
+
+
+/* =========================================================
+   CRT Flicker
+
+   Intentionally subtle. The content should feel like an
+   old display hopefuly not becoming distracting.
+   ========================================================= */
+
+@keyframes terminal-flicker {
+    0%,
+    18%,
+    22%,
+    54%,
+    72%,
+    100% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.985;
+    }
+
+    21% {
+        opacity: 0.995;
+    }
+
+    52% {
+        opacity: 0.99;
+    }
+
+    70% {
+        opacity: 0.992;
+    }
+}
+
+
+/* =========================================================
+   Reduced Motion Accessibility
+
+   Removes CRT flicker for users who request reduced motion.
+   All static terminal styling remains intact.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .markdown-theme-terminal {
+        animation: none;
+    }
+
+    .markdown-theme-terminal a {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   Small Screen Adjustments
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .markdown-theme-terminal {
+        padding: 1rem;
+
+        border-left-width: 3px;
+
+        font-size: 0.95rem;
+    }
+
+
+    .markdown-theme-terminal pre {
+        padding: 0.85rem;
+
+        font-size: 0.9rem;
+    }
+
+
+    .markdown-theme-terminal th,
+    .markdown-theme-terminal td {
+        padding: 0.5rem;
+    }
+
+}
 
 /* Responsive styles */
 /* Medium screens */
@@ -379,25 +1484,7 @@ footer {
     .nav_item a:hover {
         background-color: var(--second-color);
     }
-    /* End of Navigation Menu */
-
-    /* Profile section */
-    .profile-section, .business-card-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-card, .business-card {
-        max-width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .business-profile-image, .profile-image {
-        width: 80px;
-        height: 80px;
-    }
-    /* End Profile section */
-
+    /* Enf of Navigation Menu */
     /* End of Medium screens */
     /* Small screens */
 @media (max-width: 768px) {
@@ -473,27 +1560,7 @@ footer {
         padding: 15px;
         font-size: 0.9rem; /* Slightly smaller font for footer */
     }
-
-    .profile-section, .business-card-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-card, .business-card {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .business-profile-image, .profile-image {
-        width: 60px;
-        height: 60px;
-    }
-
-    .header-contact h1 {
-        font-size: 1.5rem;
-    }
-    /* End Profile section */
-    }
+}
 }
 /* End of Small screens */
 /* End of Responsive styles */
