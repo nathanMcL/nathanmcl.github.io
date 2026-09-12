@@ -97,7 +97,7 @@ exec ttyd \
     -t titleFixed="EmployeeOne - SSH Lab" \
     /usr/local/bin/employee-terminal```
 
-## Terminal in `C` (employee_terminal.c) (08/31/2026.1400)
+## Terminal in `C` (employee_terminal.c) (08/31/2026.1400NMT)
 
 This is a constrained lab terminal, not a general Linux shell.
 It represents EmployeeOne interacting with simulated company
