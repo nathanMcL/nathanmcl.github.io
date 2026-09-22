@@ -152,7 +152,7 @@ It started, but to test, I have to have at least the:
 
 ***Next***  
 
-`***Spin It Up***`  
+***Spin It Up***  
 
 `docker compose up -d`  
 
