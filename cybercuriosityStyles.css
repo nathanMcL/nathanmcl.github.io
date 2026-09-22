@@ -967,3 +967,585 @@ footer {
 }
 /* End of Small screens */
 /* End of Responsive styles */
+
+/* =========================================================
+   Lab Terminals Markdown Theme
+   Dark phosphor / CRT terminal appearance
+
+   Applied by cybercuriosityScript.js only when:
+   Network -> Lab Terminals is selected.
+
+   Removing .markdown-theme-terminal restores the normal
+   inherited Sandbox palette.
+   ========================================================= */
+
+.markdown-theme-terminal {
+    /* Lab Terminals palette */
+    --terminal-black: #030806;
+    --terminal-deep-green: #07140d;
+    --terminal-panel: #0a1b11;
+
+    --terminal-green: #65ff8f;
+    --terminal-bright-green: #9dffb6;
+    --terminal-muted-green: #75b98a;
+    --terminal-dim-green: #467456;
+
+    --terminal-border: rgba(101, 255, 143, 0.42);
+    --terminal-border-soft: rgba(101, 255, 143, 0.20);
+
+    --terminal-glow: rgba(101, 255, 143, 0.28);
+    --terminal-glow-soft: rgba(101, 255, 143, 0.12);
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--terminal-black) 0%,
+            var(--terminal-deep-green) 100%
+        );
+
+    color: var(--terminal-green);
+
+    border: 1px solid var(--terminal-border);
+    border-left: 5px solid var(--terminal-green);
+    border-radius: 8px;
+
+    padding: 1.25rem;
+
+    box-shadow:
+        inset 0 0 24px rgba(0, 0, 0, 0.65),
+        0 0 10px var(--terminal-glow),
+        0 0 24px var(--terminal-glow-soft);
+
+    font-family:
+        "Courier New",
+        Consolas,
+        Monaco,
+        monospace;
+
+    line-height: 1.65;
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.38);
+
+    animation:
+        terminal-flicker 8s infinite;
+}
+
+
+/* =========================================================
+   CRT Scan Lines
+
+   Decorative only:
+   pointer-events prevents the overlay from blocking links,
+   text selection, keyboard interaction, or copy/paste.
+   ========================================================= */
+
+.markdown-theme-terminal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.018) 0,
+            rgba(255, 255, 255, 0.018) 1px,
+            rgba(0, 0, 0, 0.055) 2px,
+            rgba(0, 0, 0, 0.055) 4px
+        );
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   Subtle Phosphor Screen Glow
+
+   Adds a restrained illuminated center without affecting
+   interaction.
+   ========================================================= */
+
+.markdown-theme-terminal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(101, 255, 143, 0.045) 0%,
+            rgba(101, 255, 143, 0.015) 48%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+}
+
+
+/* =========================================================
+   Markdown Content Layer
+
+   Keeps actual Markdown content above the CRT glow while
+   allowing the transparent scan-line layer to remain visible.
+   ========================================================= */
+
+.markdown-theme-terminal > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+.markdown-theme-terminal h1,
+.markdown-theme-terminal h2,
+.markdown-theme-terminal h3,
+.markdown-theme-terminal h4,
+.markdown-theme-terminal h5,
+.markdown-theme-terminal h6 {
+    color: var(--terminal-bright-green);
+
+    font-family:
+        "Courier New",
+        Consolas,
+        Monaco,
+        monospace;
+
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 0 4px rgba(157, 255, 182, 0.70),
+        0 0 10px rgba(101, 255, 143, 0.32);
+}
+
+
+.markdown-theme-terminal h1 {
+    border-bottom: 1px solid var(--terminal-border);
+    padding-bottom: 0.45rem;
+}
+
+
+.markdown-theme-terminal h2 {
+    border-bottom: 1px solid var(--terminal-border-soft);
+    padding-bottom: 0.35rem;
+}
+
+
+/* =========================================================
+   Standard Text
+   ========================================================= */
+
+.markdown-theme-terminal p,
+.markdown-theme-terminal li,
+.markdown-theme-terminal dd,
+.markdown-theme-terminal dt {
+    color: var(--terminal-green);
+}
+
+
+.markdown-theme-terminal strong,
+.markdown-theme-terminal b {
+    color: var(--terminal-bright-green);
+
+    text-shadow:
+        0 0 5px rgba(157, 255, 182, 0.45);
+}
+
+
+.markdown-theme-terminal em,
+.markdown-theme-terminal i {
+    color: var(--terminal-muted-green);
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+.markdown-theme-terminal a {
+    color: var(--terminal-bright-green);
+
+    text-decoration-color: var(--terminal-muted-green);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+
+    transition:
+        color 160ms ease,
+        text-shadow 160ms ease;
+}
+
+
+.markdown-theme-terminal a:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px var(--terminal-green),
+        0 0 10px rgba(101, 255, 143, 0.70);
+}
+
+
+.markdown-theme-terminal a:focus-visible {
+    outline: 3px solid var(--terminal-bright-green);
+    outline-offset: 3px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 6px var(--terminal-green);
+}
+
+
+/* =========================================================
+   Horizontal Rules
+   ========================================================= */
+
+.markdown-theme-terminal hr {
+    height: 1px;
+    border: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--terminal-green),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px var(--terminal-glow);
+
+    margin: 1.5rem 0;
+}
+
+
+/* =========================================================
+   Terminal / Code Blocks
+   ========================================================= */
+
+.markdown-theme-terminal pre {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #010403 0%,
+            #020805 100%
+        );
+
+    color: var(--terminal-bright-green);
+
+    border: 1px solid var(--terminal-border);
+    border-left: 4px solid var(--terminal-green);
+
+    border-radius: 6px;
+
+    padding: 1rem;
+
+    overflow-x: auto;
+
+    box-shadow:
+        inset 0 0 16px rgba(0, 0, 0, 0.90),
+        0 0 8px var(--terminal-glow-soft);
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.35);
+
+    scrollbar-color:
+        var(--terminal-dim-green)
+        var(--terminal-black);
+}
+
+
+.markdown-theme-terminal pre code {
+    display: block;
+
+    background: transparent;
+    border: 0;
+    padding: 0;
+
+    color: inherit;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        Monaco,
+        monospace;
+
+    white-space: pre;
+}
+
+
+/* Inline code */
+.markdown-theme-terminal :not(pre) > code {
+    background:
+        rgba(101, 255, 143, 0.09);
+
+    color: var(--terminal-bright-green);
+
+    border:
+        1px solid rgba(101, 255, 143, 0.20);
+
+    border-radius: 4px;
+
+    padding:
+        0.12em
+        0.35em;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        Monaco,
+        monospace;
+
+    text-shadow:
+        0 0 3px rgba(101, 255, 143, 0.28);
+}
+
+
+/* =========================================================
+   Blockquotes
+   ========================================================= */
+
+.markdown-theme-terminal blockquote {
+    margin:
+        1rem
+        0;
+
+    padding:
+        0.75rem
+        1rem;
+
+    color: var(--terminal-muted-green);
+
+    background:
+        rgba(101, 255, 143, 0.05);
+
+    border-left:
+        4px solid
+        var(--terminal-dim-green);
+
+    box-shadow:
+        inset 8px 0 16px rgba(101, 255, 143, 0.025);
+}
+
+
+.markdown-theme-terminal blockquote p {
+    color: inherit;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+.markdown-theme-terminal table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin:
+        1rem
+        0;
+
+    background:
+        rgba(0, 0, 0, 0.28);
+
+    color: var(--terminal-green);
+}
+
+
+.markdown-theme-terminal th,
+.markdown-theme-terminal td {
+    border:
+        1px solid
+        var(--terminal-border);
+
+    padding:
+        0.65rem;
+
+    text-align: left;
+}
+
+
+.markdown-theme-terminal th {
+    background:
+        rgba(101, 255, 143, 0.10);
+
+    color:
+        var(--terminal-bright-green);
+
+    text-shadow:
+        0 0 4px rgba(101, 255, 143, 0.30);
+}
+
+
+.markdown-theme-terminal tbody tr:hover {
+    background:
+        rgba(101, 255, 143, 0.045);
+}
+
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+.markdown-theme-terminal ul,
+.markdown-theme-terminal ol {
+    padding-left: 1.75rem;
+}
+
+
+.markdown-theme-terminal li::marker {
+    color: var(--terminal-bright-green);
+}
+
+
+/* =========================================================
+   Images Rendered From Markdown
+   ========================================================= */
+
+.markdown-theme-terminal img {
+    max-width: 100%;
+    height: auto;
+
+    border:
+        1px solid
+        var(--terminal-border);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 10px var(--terminal-glow-soft);
+}
+
+
+/* =========================================================
+   Keyboard / Command Indicators
+   ========================================================= */
+
+.markdown-theme-terminal kbd {
+    display: inline-block;
+
+    padding:
+        0.15rem
+        0.4rem;
+
+    background:
+        var(--terminal-black);
+
+    color:
+        var(--terminal-bright-green);
+
+    border:
+        1px solid
+        var(--terminal-border);
+
+    border-bottom-width: 2px;
+
+    border-radius: 4px;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    box-shadow:
+        0 0 5px var(--terminal-glow-soft);
+}
+
+
+/* =========================================================
+   CRT Flicker
+
+   Intentionally subtle. The content should feel like an
+   old phosphor display without becoming distracting.
+   ========================================================= */
+
+@keyframes terminal-flicker {
+    0%,
+    18%,
+    22%,
+    54%,
+    72%,
+    100% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.985;
+    }
+
+    21% {
+        opacity: 0.995;
+    }
+
+    52% {
+        opacity: 0.99;
+    }
+
+    70% {
+        opacity: 0.992;
+    }
+}
+
+
+/* =========================================================
+   Reduced Motion Accessibility
+
+   Removes CRT flicker for users who request reduced motion.
+   All static terminal styling remains intact.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .markdown-theme-terminal {
+        animation: none;
+    }
+
+    .markdown-theme-terminal a {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   Small Screen Adjustments
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .markdown-theme-terminal {
+        padding: 1rem;
+
+        border-left-width: 3px;
+
+        font-size: 0.95rem;
+    }
+
+
+    .markdown-theme-terminal pre {
+        padding: 0.85rem;
+
+        font-size: 0.9rem;
+    }
+
+
+    .markdown-theme-terminal th,
+    .markdown-theme-terminal td {
+        padding: 0.5rem;
+    }
+
+}
+
+/* End of Lab Terminals Markdown Theme */
