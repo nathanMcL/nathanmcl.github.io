@@ -219,7 +219,7 @@ wget -q0- \
     '
 ```
 
-![Lab Console](../../../images/Sandbox_images/lab_console.png)
+![Lab Console](<../../../images/Sandbox_images/lab_console.png>)
 
 ![HELP](<../../../images/Sandbox_images/TerminalTest_Set(1of1) (3).png>)
 ![HELP](<../../../images/Sandbox_images/TerminalTest_Set(1of1) (4).png>)
