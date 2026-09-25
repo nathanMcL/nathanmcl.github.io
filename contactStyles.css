@@ -19,9 +19,9 @@ body {
     --flag-blue: #00a2ff;
     /* Business card colors */
     --business-card-color1: #f0d78c;
-    --business-card-color2: #fcfafa;
-    --business-card-color3: #64c4ed;
-    --business-card-color4: #4f81c7;
+    --business-card-color2: #aeafaf;
+    --business-card-color3: #52a0c2;
+    --business-card-color4: #4471af;
 }
 /* End of Body styles */
 /* Header styles */
@@ -262,8 +262,8 @@ main p {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: var(--fourth-color);
-    color: var(--third-color);
+    background-color: var(--business-card-color4);
+    color: var(--business-card-color1);
     padding: 5px 10px;
     border-radius: 50%;
     cursor: pointer;
