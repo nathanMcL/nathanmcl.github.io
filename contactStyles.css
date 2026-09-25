@@ -9,14 +9,14 @@ body {
 
 /* Color palette from: https://palettes.shecodes.io/palettes/507#palette */
 :root {
-    --first-color: #222221;
-    --second-color: #c4eada;
-    --third-color: #ef7b7b;
-    --fourth-color: #fcf3ca;
+    --first-color: #faf8d7;
+    --second-color: #acc6aa;
+    --third-color: #71a0a5;
+    --fourth-color: #77628c;
     /* @MacN_iT text color change */
-    --flag-white: #ffffff;
+    --flag-white: #ece8e8;
     --flag-red: #ff0000;
-    --flag-blue: #0000ff;
+    --flag-blue: #00a2ff;
     /* Business card colors */
     --business-card-color1: #f0d78c;
     --business-card-color2: #fcfafa;
